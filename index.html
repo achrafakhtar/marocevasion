@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#a45d40">
   
   <!-- SEO Meta -->
-  <title>Maroc Évasion | Agence de voyage marocaine – Circuits & séjours authentiquesssss</title>
+  <title>Maroc Évasion | Agence de voyage marocaine – Circuits & séjours authentiques</title>
   <meta name="description" content="Agence de voyage locale au Maroc : circuits sur mesure, désert, villes impériales. Experts marocains, devis gratuit. Découvrez Marrakech, Fès, Sahara.">
   <meta name="keywords" content="agence voyage Maroc, circuits Maroc, séjour Marrakech, désert Merzouga, voyage sur mesure Maroc, tour opérateur marocain">
   <meta name="author" content="Maroc Évasion">
   <link rel="canonical" href="https://www.marocevasion.ma/">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.marocevasion.ma/">
   <meta property="og:title" content="Maroc Évasion – Voyages authentiques au Maroc">
@@ -25,14 +26,21 @@
   <meta name="twitter:description" content="Circuits privés et séjours inoubliables au Maroc.">
   <meta name="twitter:image" content="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1200">
   
-  <!-- Preload & Fonts -->
+  <!-- Préchargement des polices critiques -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/playfairdisplay/v30/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKd3vXDXbtXK-F2qC0s.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <!-- Google Fonts avec display=swap -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Font Awesome chargé de façon asynchrone -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
   
   <style>
-    /* Reset & variables identiques, avec améliorations d'accessibilité */
+    /* ===== CSS CRITIQUE INLINE (déjà optimisé) ===== */
     * {
       margin: 0;
       padding: 0;
@@ -40,7 +48,7 @@
     }
 
     :root {
-      --terre: #a45d40;        /* légèrement plus foncé pour contraste */
+      --terre: #a45d40;
       --sable: #e7cba5;
       --bleu-majorelle: #2a4b6e;
       --vert-menthe: #2c7865;
@@ -61,7 +69,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Skip link accessibilité */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -74,11 +81,8 @@
       border-radius: 0 0 8px 0;
       transition: top 0.2s;
     }
-    .skip-link:focus {
-      top: 0;
-    }
+    .skip-link:focus { top: 0; }
 
-    /* Focus visible pour tous les éléments interactifs */
     :focus-visible {
       outline: var(--focus-outline);
       outline-offset: 2px;
@@ -96,7 +100,6 @@
       padding: 0 24px;
     }
 
-    /* ----- HEADER / NAVIGATION ----- */
     header {
       position: sticky;
       top: 0;
@@ -126,10 +129,7 @@
       text-decoration: none;
     }
 
-    .logo i {
-      color: var(--terre);
-      font-size: 2rem;
-    }
+    .logo i { color: var(--terre); font-size: 2rem; }
 
     .nav-menu {
       display: flex;
@@ -158,13 +158,9 @@
     }
 
     .nav-link:hover::after,
-    .nav-link.active::after {
-      width: 100%;
-    }
+    .nav-link.active::after { width: 100%; }
 
-    .nav-link:hover {
-      color: var(--terre);
-    }
+    .nav-link:hover { color: var(--terre); }
 
     .btn-contact {
       background: var(--terre);
@@ -175,16 +171,9 @@
       box-shadow: 0 6px 12px rgba(164, 93, 64, 0.25);
     }
 
-    .btn-contact:hover {
-      background: #8a4a32;
-      transform: translateY(-2px);
-    }
+    .btn-contact:hover { background: #8a4a32; transform: translateY(-2px); }
+    .btn-contact::after { display: none; }
 
-    .btn-contact::after {
-      display: none;
-    }
-
-    /* Hamburger accessible */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -205,10 +194,7 @@
       transition: var(--transition);
     }
 
-    /* ----- HERO ----- */
-    .hero {
-      padding: 40px 0 80px;
-    }
+    .hero { padding: 40px 0 80px; }
 
     .hero-grid {
       display: grid;
@@ -237,11 +223,7 @@
       max-width: 500px;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
 
     .btn {
       display: inline-block;
@@ -261,10 +243,7 @@
       box-shadow: 0 12px 18px -8px rgba(164, 93, 64, 0.35);
     }
 
-    .btn-primary:hover {
-      background: #8a4a32;
-      transform: scale(1.02);
-    }
+    .btn-primary:hover { background: #8a4a32; transform: scale(1.02); }
 
     .btn-outline {
       border: 1.5px solid var(--bleu-majorelle);
@@ -272,10 +251,7 @@
       background: transparent;
     }
 
-    .btn-outline:hover {
-      background: var(--bleu-majorelle);
-      color: white;
-    }
+    .btn-outline:hover { background: var(--bleu-majorelle); color: white; }
 
     .hero-image {
       position: relative;
@@ -284,7 +260,7 @@
       box-shadow: var(--ombre-douce);
       border: 4px solid white;
       background: #d9c8b2;
-      aspect-ratio: 4/3;
+      aspect-ratio: 4 / 3;
     }
 
     .hero-image img {
@@ -292,11 +268,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.5s;
-    }
-
-    .hero-image:hover img {
-      transform: scale(1.03);
     }
 
     .pattern-dots {
@@ -308,7 +279,6 @@
       opacity: 0.15;
     }
 
-    /* ----- DESTINATIONS ----- */
     .section-title {
       font-size: 2.5rem;
       color: var(--bleu-majorelle);
@@ -339,30 +309,20 @@
       border: 1px solid rgba(0,0,0,0.02);
     }
 
-    .destination-card:hover {
-      transform: translateY(-8px);
-    }
+    .destination-card:hover { transform: translateY(-8px); }
 
-    .card-img {
-      height: 200px;
-      overflow: hidden;
-    }
+    .card-img { height: 200px; overflow: hidden; }
 
     .card-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s;
-      loading: lazy;  /* pour performance */
     }
 
-    .destination-card:hover .card-img img {
-      transform: scale(1.08);
-    }
+    .destination-card:hover .card-img img { transform: scale(1.08); }
 
-    .card-content {
-      padding: 20px 16px 24px;
-    }
+    .card-content { padding: 20px 16px 24px; }
 
     .card-content h3 {
       font-size: 1.5rem;
@@ -385,7 +345,6 @@
       color: var(--gris-foncé);
     }
 
-    /* ----- SERVICES ----- */
     .features {
       background: white;
       border-radius: 50px 50px 30px 30px;
@@ -401,9 +360,7 @@
       text-align: center;
     }
 
-    .feature-item {
-      padding: 20px;
-    }
+    .feature-item { padding: 20px; }
 
     .feature-icon {
       width: 80px;
@@ -419,15 +376,9 @@
       transition: var(--transition);
     }
 
-    .feature-item:hover .feature-icon {
-      background: var(--terre);
-      color: white;
-    }
+    .feature-item:hover .feature-icon { background: var(--terre); color: white; }
 
-    /* ----- TÉMOIGNAGES ----- */
-    .testimonials {
-      padding: 40px 0 80px;
-    }
+    .testimonials { padding: 40px 0 80px; }
 
     .testimonials-grid {
       display: grid;
@@ -467,7 +418,6 @@
       color: var(--bleu-majorelle);
     }
 
-    /* ----- CONTACT / FOOTER ----- */
     .contact-section {
       background: var(--bleu-majorelle);
       color: white;
@@ -495,16 +445,9 @@
       margin-bottom: 24px;
     }
 
-    .info-item i {
-      font-size: 1.8rem;
-      color: var(--sable);
-    }
+    .info-item i { font-size: 1.8rem; color: var(--sable); }
 
-    .social-links {
-      display: flex;
-      gap: 20px;
-      margin-top: 30px;
-    }
+    .social-links { display: flex; gap: 20px; margin-top: 30px; }
 
     .social-links a {
       color: white;
@@ -520,21 +463,11 @@
       text-decoration: none;
     }
 
-    .social-links a:hover {
-      background: var(--terre);
-      transform: translateY(-3px);
-    }
+    .social-links a:hover { background: var(--terre); transform: translateY(-3px); }
 
-    .newsletter h3 {
-      color: white;
-      margin-bottom: 20px;
-    }
+    .newsletter h3 { color: white; margin-bottom: 20px; }
 
-    .newsletter-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .newsletter-form { display: flex; flex-wrap: wrap; gap: 12px; }
 
     .newsletter-form input {
       flex: 1;
@@ -556,9 +489,7 @@
       transition: var(--transition);
     }
 
-    .newsletter-form button:hover {
-      background: #8a4a32;
-    }
+    .newsletter-form button:hover { background: #8a4a32; }
 
     .footer-bottom {
       text-align: center;
@@ -568,7 +499,15 @@
       margin-top: 40px;
     }
 
-    /* ----- RESPONSIVE ----- */
+    .zellige-touch {
+      height: 6px;
+      background: repeating-linear-gradient(45deg, var(--terre) 0px, var(--terre) 8px, var(--sable) 8px, var(--sable) 16px);
+      width: 120px;
+      margin: 16px auto 32px;
+      border-radius: 10px;
+    }
+
+    /* Responsive */
     @media screen and (max-width: 992px) {
       .destinations-grid { grid-template-columns: repeat(2, 1fr); }
       .hero-grid { grid-template-columns: 1fr; }
@@ -604,18 +543,9 @@
       .destinations-grid { grid-template-columns: 1fr; }
       .hero-buttons .btn { width: 100%; text-align: center; }
     }
-
-    .zellige-touch {
-      height: 6px;
-      background: repeating-linear-gradient(45deg, var(--terre) 0px, var(--terre) 8px, var(--sable) 8px, var(--sable) 16px);
-      width: 120px;
-      margin: 16px auto 32px;
-      border-radius: 10px;
-    }
   </style>
 </head>
 <body>
-  <!-- Skip link -->
   <a href="#main-content" class="skip-link">Aller au contenu principal</a>
   
   <header>
@@ -659,9 +589,15 @@
         </div>
         <div class="hero-image">
           <div class="pattern-dots" aria-hidden="true"></div>
-          <img src="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-               alt="Riad traditionnel marocain avec fontaine et zellige, symbole de l'hospitalité marocaine" 
-               loading="eager">
+          <!-- Image LCP optimisée : dimensions fixes, fetchpriority high -->
+          <img 
+            src="https://images.pexels.com/photos/534164/pexels-photo-534164.jpeg?auto=compress&cs=tinysrgb&w=1200" 
+            alt="Riad traditionnel marocain avec fontaine et zellige, symbole de l'hospitalité marocaine"
+            width="1200"
+            height="800"
+            loading="eager"
+            fetchpriority="high"
+          >
         </div>
       </div>
     </section>
@@ -674,9 +610,13 @@
       <div class="destinations-grid" role="list">
         <article class="destination-card" role="listitem">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/4502967/pexels-photo-4502967.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Vue aérienne de la place Jemaa el-Fna à Marrakech au coucher du soleil" 
-                 loading="lazy">
+            <img 
+              src="https://images.pexels.com/photos/4502967/pexels-photo-4502967.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              alt="Vue aérienne de la place Jemaa el-Fna à Marrakech au coucher du soleil"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
           </div>
           <div class="card-content">
             <h3>Marrakech</h3>
@@ -687,9 +627,13 @@
         </article>
         <article class="destination-card" role="listitem">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/534112/pexels-photo-534112.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Tanneries traditionnelles de Fès avec cuves colorées" 
-                 loading="lazy">
+            <img 
+              src="https://images.pexels.com/photos/534112/pexels-photo-534112.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              alt="Tanneries traditionnelles de Fès avec cuves colorées"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
           </div>
           <div class="card-content">
             <h3>Fès</h3>
@@ -700,9 +644,13 @@
         </article>
         <article class="destination-card" role="listitem">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/2845013/pexels-photo-2845013.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Caravane de dromadaires dans les dunes de Merzouga au Sahara" 
-                 loading="lazy">
+            <img 
+              src="https://images.pexels.com/photos/2845013/pexels-photo-2845013.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              alt="Caravane de dromadaires dans les dunes de Merzouga au Sahara"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
           </div>
           <div class="card-content">
             <h3>Désert de Merzouga</h3>
@@ -713,9 +661,13 @@
         </article>
         <article class="destination-card" role="listitem">
           <div class="card-img">
-            <img src="https://images.pexels.com/photos/1535244/pexels-photo-1535244.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                 alt="Ruelles bleues caractéristiques de Chefchaouen dans le Rif marocain" 
-                 loading="lazy">
+            <img 
+              src="https://images.pexels.com/photos/1535244/pexels-photo-1535244.jpeg?auto=compress&cs=tinysrgb&w=600" 
+              alt="Ruelles bleues caractéristiques de Chefchaouen dans le Rif marocain"
+              width="600"
+              height="400"
+              loading="lazy"
+            >
           </div>
           <div class="card-content">
             <h3>Chefchaouen</h3>
@@ -817,7 +769,7 @@
     </section>
   </main>
 
-  <!-- Schema.org pour agence de voyage -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -842,7 +794,7 @@
   }
   </script>
 
-  <!-- JavaScript accessible -->
+  <!-- JavaScript (léger, avec defer implicite) -->
   <script>
     (function() {
       'use strict';
@@ -888,7 +840,6 @@
             const targetEl = document.querySelector(href);
             if (targetEl) {
               targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              // Mettre à jour aria-current
               navLinks.forEach(l => l.removeAttribute('aria-current'));
               link.setAttribute('aria-current', 'page');
             }
@@ -896,7 +847,7 @@
         });
       });
 
-      // Gestion du focus et aria-current au scroll
+      // aria-current au scroll
       const sections = document.querySelectorAll('section[id]');
       window.addEventListener('scroll', function() {
         let current = '';
@@ -936,7 +887,7 @@
         });
       }
 
-      // Gestion touche Échap pour fermer menu mobile
+      // Fermer menu avec Échap
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
           navMenu.classList.remove('active');
